@@ -22,11 +22,15 @@ function App() {
     data.push(qouteData);
     console.log(qouteData);
   }
+  if(data.length >= 4) 
+  {
+ 
+  }
 
   return (
     <div className=" font-[poppins] flex items-center justify-center relative h-screen">
       <img
-        className="bg-cover w-[100%] h-[300px] absolute bottom-0"
+        className="bg-cover w-screen h-[300px] absolute top-0"
         src={Background}
       ></img>
       <div className=" z-10 flex items-center justify-center flex-col">
@@ -35,15 +39,17 @@ function App() {
             <div className="flex justify-center items-center flex-wrap gap-2">
               {data?.length > 0 &&
                 data.map((obj) => (
-                  <div className=" text-center flex justify-center  border-4 border-double border-black bg-blue-100 relative w-[600px] h-[200px]">
-                    
+                  <div className=" text-center flex justify-center  border-4 border-double border-black bg-gradient-to-r from-violet-200 to-fuchsia-200 relative w-[600px] h-[200px]">
                     <img className="w-10 h-10" src={upperQoutes}></img>
                     <div className=" text-center text-lg flex justify-center items-center flex-col m-auto w-[536px] h-[136px]">
                       <p>{obj.content}</p>
 
                       <h3 className="font-bold">-{obj.author}</h3>
                     </div>
-                    <img className="absolute bottom-0 w-10 h-10 right-0" src={DownQoutes}></img>
+                    <img
+                      className="absolute bottom-0 w-10 h-10 right-0"
+                      src={DownQoutes}
+                    ></img>
                   </div>
                 ))}
             </div>
